@@ -1,76 +1,115 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyma Panarea - Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Stili Generali e Reset */
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #FFFFFF;
-            font-family: 'Montserrat', sans-serif;
-            color: #333;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kyma Panarea - Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  user-select: none;
+  caret-color: transparent;
+}
+
+    body:focus {
+  outline: none;
+}
 
 
-        .content-wrapper {
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-            max-width: 90%;
-        }
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      opacity: 0.75;
+      filter: brightness(0.7) blur(2px);
+    }
 
-        
-        .logo {
-            max-width: 300px; 
-            height: auto;
-            display: block; 
-            margin: 0 auto 20px auto;
-        }
+    .overlay {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
 
-        
-        .coming-soon-text {
-            font-size: 2.5em; 
-            font-weight: 700;
-            text-transform: uppercase; 
-            letter-spacing: 5px; 
-        }
+    .logo {
+      max-width: 90vw;
+      max-height: 80vh;
+      opacity: 0;
+      animation: zoomFade 1.5s ease-out forwards;
+    }
 
-        @media (max-width: 1024px) {
-            .logo {
-                max-width: 250px; /* Logo leggermente più piccolo sui tablet */
-            }
-            .coming-soon-text {
-                font-size: 2em; /* Testo più piccolo sui tablet */
-                letter-spacing: 4px;
-            }
-        }
+    
 
-        /* Telefono (schermi fino a 599px) */
-        @media (max-width: 599px) {
-            .logo {
-                max-width: 180px; /* Logo più piccolo sui telefoni */
-            }
-            .coming-soon-text {
-                font-size: 1.5em; /* Testo ancora più piccolo sui telefoni */
-                letter-spacing: 3px;
-            }
-        }
-    </style>
+
+    @keyframes zoomFade {
+      0% {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .coming-soon {
+        font-size: 1.8rem;
+        margin-top: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .coming-soon {
+        font-size: 1.5rem;
+        letter-spacing: 0.15rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="content-wrapper">
-        <img src="logo-kyma-panarea.png" alt="Kyma Panarea Logo" class="logo">
-        <p class="coming-soon-text">Coming Soon</p>
-    </div>
+  <!-- Video Background -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="bg.mp4" type="video/mp4" />
+    Il tuo browser non supporta il video HTML5.
+  </video>
+
+  <!-- Overlay Content -->
+  <div class="overlay">
+    <img src="logo-kyma-panarea.png" alt="Kyma Panarea Logo" class="logo" />
+  </div>
 </body>
 </html>
