@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYMA PANAREA - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Per impilare gli elementi verticalmente */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Occupare l'intera altezza della viewport */
+            background-color: #FFFFFF; /* Sfondo tutto bianco */
+            font-family: 'Montserrat', sans-serif; /* Font simile a quello del logo */
+            color: #333; /* Colore del testo */
+            text-align: center;
+        }
+
+        .logo-container img {
+            max-width: 300px; /* Dimensione massima per il logo, puoi aggiustare */
+            height: auto; /* Mantiene le proporzioni */
+            margin-bottom: 30px; /* Spazio tra logo e testo */
+        }
+
+        .coming-soon-text {
+            font-size: 2.5em; /* Dimensione del testo "Coming Soon" */
+            font-weight: 700; /* Grassetto */
+            letter-spacing: 2px; /* Spaziatura lettere */
+            text-transform: uppercase; /* Tutto maiuscolo */
+        }
+
+        /* Stile opzionale per il sottotitolo se volessi usarlo */
+        .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        /* Media query per schermi più piccoli */
+        @media (max-width: 768px) {
+            .logo-container img {
+                max-width: 200px;
+            }
+            .coming-soon-text {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="logo-kyma-panarea.png" alt="KYMA PANAREA Logo">
+    </div>
+    <div class="coming-soon-text">
+        Coming Soon...
+    </div>
+    </body>
+</html>
